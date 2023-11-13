@@ -48,7 +48,7 @@ class CocheControladorTest {
 
     @Test
     public void agregar_CuandoCocheNoEsValido_VolverAlFormulario() throws Exception {
-        Coche coche = new Coche();
+
         mockmvc.perform(post("/coches/agregar")
                 .flashAttr("coche", coche))
                 .andExpect(status().is3xxRedirection())
