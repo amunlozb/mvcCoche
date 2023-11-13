@@ -5,6 +5,7 @@
     <title>Lista de coches</title>
 </head>
 <body>
+<!--    Listado-->
     <h1>Coches</h1>
     <table>
         <tr>
@@ -18,5 +19,8 @@
             <td th:text="${c.color}"></td>
         </tr>
     </table>
+<!--    Enlace Crear nuevo coche-->
+    <a th:href="@{/coches/nuevo}">Nuevo coche</a>
+
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.crudsimulacro.service;
 
 import com.crudsimulacro.dao.CocheRepositorio;
 import com.crudsimulacro.model.Coche;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,9 @@ public class CocheServicio {
         }
 
         return coches;
+    }
+
+    public void guardar(@Valid Coche coche) {
+        repositorio.save(coche);
     }
 }
