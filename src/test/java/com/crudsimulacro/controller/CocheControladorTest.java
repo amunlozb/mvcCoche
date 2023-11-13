@@ -51,6 +51,7 @@ class CocheControladorTest {
         Coche coche = new Coche();
         mockmvc.perform(post("/coches/agregar")
                 .flashAttr("coche", coche))
+                .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/coches"));
     }
 
