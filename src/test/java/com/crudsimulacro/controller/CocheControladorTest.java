@@ -9,6 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.crudsimulacro.model.Coche;
 
 
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,10 +40,18 @@ class CocheControladorTest {
 
         given(servicio.obtenerTodos()).willReturn(coches);
 
-        mockmvc.perform(get("/coches"));
+        mockmvc.perform(get("/coches"))
+                .andExpect(view().name("coches"))
+                .andExpect(model().attributeExists("coches"))
+                .andExpect(model().attribute("coches", coches));
     }
 
-
-
+    @Test
+    public void agregar_CuandoCocheNoEsValido_VolverAlFormulario() throws Exception {
+        Coche coche = new Coche();
+        mockmvc.perform(post("/coches/agregar")
+                .flashAttr("coche", coche))
+                .andExpect(redirectedUrl("/coches"));
+    }
 
 }
