@@ -26,7 +26,7 @@ public class CocheServicio {
         return coches;
     }
 
-    public void guardar(@Valid Coche coche) {
+    public void guardar(Coche coche) {
         repositorio.save(coche);
     }
 }
