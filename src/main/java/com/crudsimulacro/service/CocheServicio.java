@@ -35,4 +35,8 @@ public class CocheServicio {
         Optional<Coche> coche = repositorio.findById(id);
         return coche.get();
     }
+
+    public void eliminar(Integer id) {
+        repositorio.deleteById(id);
+    }
 }

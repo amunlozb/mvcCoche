@@ -17,8 +17,10 @@
             <td th:text="${c.marca}"></td>
             <td th:text="${c.matricula}"></td>
             <td th:text="${c.color}"></td>
-<!--            Boton editar-->
+<!--            editar-->
             <td><a th:href="@{/coches/editar/{id}(id=${c.id})}">Editar</a></td>
+<!--            eliminar-->
+            <td><a th:href="@{/coches/eliminar/{id}(id=${c.id})}">Eliminar</a></td>
         </tr>
     </table>
 <!--    Enlace Crear nuevo coche-->

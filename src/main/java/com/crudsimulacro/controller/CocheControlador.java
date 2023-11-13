@@ -44,4 +44,13 @@ public class CocheControlador {
         model.addAttribute("coche", coche);
         return "form_coche";
     }
+
+    @GetMapping("/coches/eliminar/{id}")
+    public String eliminarCoche(@PathVariable Integer id, Model model) {
+        servicio.eliminar(id);
+
+        return "redirect:/coches";
+    }
+
+
 }
