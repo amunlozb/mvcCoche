@@ -7,6 +7,8 @@
 <body>
     <h1>Formulario</h1>
 <form th:action="@{/coches/agregar}" th:object="${coche}" method="post">
+<!--    Necesito un input hidden para mantener los IDs-->
+    <input type="hidden" th:value="*{id}" name="id">
     <div>
         <label for="marca">Marca</label>
         <input type="text" id="marca" th:field="*{marca}" />
