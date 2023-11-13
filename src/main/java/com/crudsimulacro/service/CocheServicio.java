@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CocheServicio {
@@ -28,5 +29,10 @@ public class CocheServicio {
 
     public void guardar(Coche coche) {
         repositorio.save(coche);
+    }
+
+    public Coche obtenerCochePorId(Integer id) {
+        Optional<Coche> coche = repositorio.findById(id);
+        return coche.get();
     }
 }
