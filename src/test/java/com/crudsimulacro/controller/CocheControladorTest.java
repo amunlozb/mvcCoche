@@ -51,7 +51,7 @@ class CocheControladorTest {
 
         mockmvc.perform(post("/coches/agregar")
                 .flashAttr("coche", coche))
-                .andExpect(status().is3xxRedirection())
+                //No hace falta, va implicito en la linea de abajo "redirectedUrl" .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/coches"));
     }
 
